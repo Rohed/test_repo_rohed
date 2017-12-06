@@ -1,0 +1,571 @@
+2017-12-01 14:47:09,237: Tracking: tracking
+2017-12-01 14:47:09,274: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b38c510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b38c5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b38c610>], 'label': 'start'}
+2017-12-01 14:47:09,860: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 14:47:09,873: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 14:47:09,877: Parsing core.sql
+2017-12-01 14:47:09,893: Parsing adapters/bigquery.sql
+2017-12-01 14:47:09,901: Parsing adapters/common.sql
+2017-12-01 14:47:09,918: Parsing adapters/postgres.sql
+2017-12-01 14:47:09,922: Parsing adapters/redshift.sql
+2017-12-01 14:47:09,949: Parsing etc/get_custom_schema.sql
+2017-12-01 14:47:09,962: Parsing materializations/archive.sql
+2017-12-01 14:47:10,001: Parsing materializations/bigquery.sql
+2017-12-01 14:47:10,018: Parsing materializations/helpers.sql
+2017-12-01 14:47:10,039: Parsing materializations/incremental.sql
+2017-12-01 14:47:10,092: Parsing materializations/table.sql
+2017-12-01 14:47:10,123: Parsing materializations/view.sql
+2017-12-01 14:47:10,152: Parsing materializations/wrapper.sql
+2017-12-01 14:47:10,160: Parsing schema_tests/accepted_values.sql
+2017-12-01 14:47:10,169: Parsing schema_tests/not_null.sql
+2017-12-01 14:47:10,174: Parsing schema_tests/relationships.sql
+2017-12-01 14:47:10,181: Parsing schema_tests/unique.sql
+2017-12-01 14:47:10,188: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 14:47:10,195: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 14:47:10,198: 
+2017-12-01 14:47:10,201: Acquiring new bigquery connection "master".
+2017-12-01 14:47:10,201: Opening a new connection (0 currently allocated)
+2017-12-01 14:47:10,252: Unhandled error while running:
+list dataset
+2017-12-01 14:47:10,252: 'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 14:47:10,252: Connection 'master' was left open.
+2017-12-01 14:47:10,253: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b53fe10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b53f150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b53fe90>], 'label': 'end'}
+2017-12-01 14:47:10,365: Encountered an error:
+2017-12-01 14:47:10,365: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 14:47:10,371: Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 40, in main
+    results, succeeded = handle_and_check(args)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 84, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 138, in run_from_args
+    results = run_from_task(task, proj, parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 146, in run_from_task
+    result = task.run()
+  File "/Library/Python/2.7/site-packages/dbt/task/run.py", line 26, in run
+    results = runner.run(query, ModelRunner)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 221, in run
+    return self.run_from_graph(Selector, Runner, query)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 206, in run_from_graph
+    Runner.before_run(self.project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 326, in before_run
+    cls.create_schemas(project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 319, in create_schemas
+    existing_schemas = set(adapter.get_existing_schemas(profile))
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 342, in get_existing_schemas
+    return [ds.name for ds in all_datasets]
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 35, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 64, in exception_handler
+    raise dbt.exceptions.RuntimeException(dbt.compat.to_string(e))
+RuntimeException: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+
+2017-12-01 14:50:05,162: Tracking: tracking
+2017-12-01 14:50:05,187: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111fc9510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111fc95d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111fc9610>], 'label': 'start'}
+2017-12-01 14:50:05,808: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 14:50:05,821: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 14:50:05,827: Parsing core.sql
+2017-12-01 14:50:05,845: Parsing adapters/bigquery.sql
+2017-12-01 14:50:05,853: Parsing adapters/common.sql
+2017-12-01 14:50:05,874: Parsing adapters/postgres.sql
+2017-12-01 14:50:05,880: Parsing adapters/redshift.sql
+2017-12-01 14:50:05,900: Parsing etc/get_custom_schema.sql
+2017-12-01 14:50:05,908: Parsing materializations/archive.sql
+2017-12-01 14:50:05,941: Parsing materializations/bigquery.sql
+2017-12-01 14:50:05,964: Parsing materializations/helpers.sql
+2017-12-01 14:50:05,995: Parsing materializations/incremental.sql
+2017-12-01 14:50:06,034: Parsing materializations/table.sql
+2017-12-01 14:50:06,060: Parsing materializations/view.sql
+2017-12-01 14:50:06,081: Parsing materializations/wrapper.sql
+2017-12-01 14:50:06,088: Parsing schema_tests/accepted_values.sql
+2017-12-01 14:50:06,095: Parsing schema_tests/not_null.sql
+2017-12-01 14:50:06,099: Parsing schema_tests/relationships.sql
+2017-12-01 14:50:06,105: Parsing schema_tests/unique.sql
+2017-12-01 14:50:06,111: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 14:50:06,118: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 14:50:06,121: 
+2017-12-01 14:50:06,124: Acquiring new bigquery connection "master".
+2017-12-01 14:50:06,124: Opening a new connection (0 currently allocated)
+2017-12-01 14:50:06,220: Unhandled error while running:
+list dataset
+2017-12-01 14:50:06,220: 'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 14:50:06,220: Connection 'master' was left open.
+2017-12-01 14:50:06,220: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11217c350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11217ced0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11217ce90>], 'label': 'end'}
+2017-12-01 14:50:06,344: Encountered an error:
+2017-12-01 14:50:06,345: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 14:50:06,353: Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 40, in main
+    results, succeeded = handle_and_check(args)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 84, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 138, in run_from_args
+    results = run_from_task(task, proj, parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 146, in run_from_task
+    result = task.run()
+  File "/Library/Python/2.7/site-packages/dbt/task/run.py", line 26, in run
+    results = runner.run(query, ModelRunner)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 221, in run
+    return self.run_from_graph(Selector, Runner, query)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 206, in run_from_graph
+    Runner.before_run(self.project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 326, in before_run
+    cls.create_schemas(project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 319, in create_schemas
+    existing_schemas = set(adapter.get_existing_schemas(profile))
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 342, in get_existing_schemas
+    return [ds.name for ds in all_datasets]
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 35, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 64, in exception_handler
+    raise dbt.exceptions.RuntimeException(dbt.compat.to_string(e))
+RuntimeException: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+
+2017-12-01 15:00:20,655: Tracking: tracking
+2017-12-01 15:00:20,698: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10806d510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10806d5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10806d610>], 'label': 'start'}
+2017-12-01 15:00:21,286: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 15:00:21,303: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 15:00:21,310: Parsing core.sql
+2017-12-01 15:00:21,328: Parsing adapters/bigquery.sql
+2017-12-01 15:00:21,340: Parsing adapters/common.sql
+2017-12-01 15:00:21,357: Parsing adapters/postgres.sql
+2017-12-01 15:00:21,362: Parsing adapters/redshift.sql
+2017-12-01 15:00:21,385: Parsing etc/get_custom_schema.sql
+2017-12-01 15:00:21,393: Parsing materializations/archive.sql
+2017-12-01 15:00:21,431: Parsing materializations/bigquery.sql
+2017-12-01 15:00:21,452: Parsing materializations/helpers.sql
+2017-12-01 15:00:21,470: Parsing materializations/incremental.sql
+2017-12-01 15:00:21,498: Parsing materializations/table.sql
+2017-12-01 15:00:21,518: Parsing materializations/view.sql
+2017-12-01 15:00:21,535: Parsing materializations/wrapper.sql
+2017-12-01 15:00:21,541: Parsing schema_tests/accepted_values.sql
+2017-12-01 15:00:21,550: Parsing schema_tests/not_null.sql
+2017-12-01 15:00:21,556: Parsing schema_tests/relationships.sql
+2017-12-01 15:00:21,563: Parsing schema_tests/unique.sql
+2017-12-01 15:00:21,570: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 15:00:21,576: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 15:00:21,580: 
+2017-12-01 15:00:21,583: Acquiring new bigquery connection "master".
+2017-12-01 15:00:21,583: Opening a new connection (0 currently allocated)
+2017-12-01 15:00:21,661: Unhandled error while running:
+list dataset
+2017-12-01 15:00:21,661: 'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 15:00:21,661: Connection 'master' was left open.
+2017-12-01 15:00:21,661: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10821fed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10821f910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10821fe90>], 'label': 'end'}
+2017-12-01 15:00:21,882: Encountered an error:
+2017-12-01 15:00:21,883: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 15:00:21,888: Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 40, in main
+    results, succeeded = handle_and_check(args)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 84, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 138, in run_from_args
+    results = run_from_task(task, proj, parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 146, in run_from_task
+    result = task.run()
+  File "/Library/Python/2.7/site-packages/dbt/task/run.py", line 26, in run
+    results = runner.run(query, ModelRunner)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 221, in run
+    return self.run_from_graph(Selector, Runner, query)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 206, in run_from_graph
+    Runner.before_run(self.project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 326, in before_run
+    cls.create_schemas(project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 319, in create_schemas
+    existing_schemas = set(adapter.get_existing_schemas(profile))
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 342, in get_existing_schemas
+    return [ds.name for ds in all_datasets]
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 35, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 64, in exception_handler
+    raise dbt.exceptions.RuntimeException(dbt.compat.to_string(e))
+RuntimeException: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+
+2017-12-01 15:02:39,151: Tracking: tracking
+2017-12-01 15:02:39,167: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c287510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c2875d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c287610>], 'label': 'start'}
+2017-12-01 15:02:39,317: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 15:02:39,333: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 15:02:39,336: Parsing core.sql
+2017-12-01 15:02:39,356: Parsing adapters/bigquery.sql
+2017-12-01 15:02:39,374: Parsing adapters/common.sql
+2017-12-01 15:02:39,393: Parsing adapters/postgres.sql
+2017-12-01 15:02:39,397: Parsing adapters/redshift.sql
+2017-12-01 15:02:39,421: Parsing etc/get_custom_schema.sql
+2017-12-01 15:02:39,430: Parsing materializations/archive.sql
+2017-12-01 15:02:39,465: Parsing materializations/bigquery.sql
+2017-12-01 15:02:39,483: Parsing materializations/helpers.sql
+2017-12-01 15:02:39,504: Parsing materializations/incremental.sql
+2017-12-01 15:02:39,540: Parsing materializations/table.sql
+2017-12-01 15:02:39,573: Parsing materializations/view.sql
+2017-12-01 15:02:39,595: Parsing materializations/wrapper.sql
+2017-12-01 15:02:39,601: Parsing schema_tests/accepted_values.sql
+2017-12-01 15:02:39,607: Parsing schema_tests/not_null.sql
+2017-12-01 15:02:39,611: Parsing schema_tests/relationships.sql
+2017-12-01 15:02:39,619: Parsing schema_tests/unique.sql
+2017-12-01 15:02:39,625: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 15:02:39,632: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 15:02:39,635: 
+2017-12-01 15:02:39,638: Acquiring new bigquery connection "master".
+2017-12-01 15:02:39,639: Opening a new connection (0 currently allocated)
+2017-12-01 15:02:39,706: Unhandled error while running:
+list dataset
+2017-12-01 15:02:39,707: 'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 15:02:39,707: Connection 'master' was left open.
+2017-12-01 15:02:39,707: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c43a350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c43ae90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c43a150>], 'label': 'end'}
+2017-12-01 15:02:39,822: Encountered an error:
+2017-12-01 15:02:39,822: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 15:02:39,828: Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 40, in main
+    results, succeeded = handle_and_check(args)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 84, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 138, in run_from_args
+    results = run_from_task(task, proj, parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 146, in run_from_task
+    result = task.run()
+  File "/Library/Python/2.7/site-packages/dbt/task/run.py", line 26, in run
+    results = runner.run(query, ModelRunner)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 221, in run
+    return self.run_from_graph(Selector, Runner, query)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 206, in run_from_graph
+    Runner.before_run(self.project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 326, in before_run
+    cls.create_schemas(project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 319, in create_schemas
+    existing_schemas = set(adapter.get_existing_schemas(profile))
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 342, in get_existing_schemas
+    return [ds.name for ds in all_datasets]
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 35, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 64, in exception_handler
+    raise dbt.exceptions.RuntimeException(dbt.compat.to_string(e))
+RuntimeException: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+
+2017-12-01 15:05:04,614: Tracking: tracking
+2017-12-01 15:05:04,652: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abda510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abda5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10abda610>], 'label': 'start'}
+2017-12-01 15:05:05,271: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 15:05:05,283: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 15:05:05,289: Parsing core.sql
+2017-12-01 15:05:05,305: Parsing adapters/bigquery.sql
+2017-12-01 15:05:05,316: Parsing adapters/common.sql
+2017-12-01 15:05:05,339: Parsing adapters/postgres.sql
+2017-12-01 15:05:05,347: Parsing adapters/redshift.sql
+2017-12-01 15:05:05,369: Parsing etc/get_custom_schema.sql
+2017-12-01 15:05:05,379: Parsing materializations/archive.sql
+2017-12-01 15:05:05,413: Parsing materializations/bigquery.sql
+2017-12-01 15:05:05,429: Parsing materializations/helpers.sql
+2017-12-01 15:05:05,448: Parsing materializations/incremental.sql
+2017-12-01 15:05:05,477: Parsing materializations/table.sql
+2017-12-01 15:05:05,499: Parsing materializations/view.sql
+2017-12-01 15:05:05,516: Parsing materializations/wrapper.sql
+2017-12-01 15:05:05,521: Parsing schema_tests/accepted_values.sql
+2017-12-01 15:05:05,527: Parsing schema_tests/not_null.sql
+2017-12-01 15:05:05,532: Parsing schema_tests/relationships.sql
+2017-12-01 15:05:05,539: Parsing schema_tests/unique.sql
+2017-12-01 15:05:05,546: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 15:05:05,553: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 15:05:05,556: 
+2017-12-01 15:05:05,560: Acquiring new bigquery connection "master".
+2017-12-01 15:05:05,560: Opening a new connection (0 currently allocated)
+2017-12-01 15:05:05,610: Unhandled error while running:
+list dataset
+2017-12-01 15:05:05,611: 'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 15:05:05,611: Connection 'master' was left open.
+2017-12-01 15:05:05,612: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad8d910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad8d350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10ad8de90>], 'label': 'end'}
+2017-12-01 15:05:05,715: Encountered an error:
+2017-12-01 15:05:05,716: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+2017-12-01 15:05:05,720: Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 40, in main
+    results, succeeded = handle_and_check(args)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 84, in handle_and_check
+    task, res = run_from_args(parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 138, in run_from_args
+    results = run_from_task(task, proj, parsed)
+  File "/Library/Python/2.7/site-packages/dbt/main.py", line 146, in run_from_task
+    result = task.run()
+  File "/Library/Python/2.7/site-packages/dbt/task/run.py", line 26, in run
+    results = runner.run(query, ModelRunner)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 221, in run
+    return self.run_from_graph(Selector, Runner, query)
+  File "/Library/Python/2.7/site-packages/dbt/runner.py", line 206, in run_from_graph
+    Runner.before_run(self.project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 326, in before_run
+    cls.create_schemas(project, adapter, flat_graph)
+  File "/Library/Python/2.7/site-packages/dbt/node_runners.py", line 319, in create_schemas
+    existing_schemas = set(adapter.get_existing_schemas(profile))
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 342, in get_existing_schemas
+    return [ds.name for ds in all_datasets]
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/contextlib.py", line 35, in __exit__
+    self.gen.throw(type, value, traceback)
+  File "/Library/Python/2.7/site-packages/dbt/adapters/bigquery.py", line 64, in exception_handler
+    raise dbt.exceptions.RuntimeException(dbt.compat.to_string(e))
+RuntimeException: Runtime Error
+  'Module_six_moves_urllib_parse' object has no attribute 'urlencode'
+
+2017-12-01 15:09:10,439: Tracking: tracking
+2017-12-01 15:09:10,458: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114703650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114703510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1147035d0>], 'label': 'start'}
+2017-12-01 15:09:11,364: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 15:09:11,380: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 15:09:11,387: Parsing core.sql
+2017-12-01 15:09:11,405: Parsing adapters/bigquery.sql
+2017-12-01 15:09:11,417: Parsing adapters/common.sql
+2017-12-01 15:09:11,444: Parsing adapters/postgres.sql
+2017-12-01 15:09:11,452: Parsing adapters/redshift.sql
+2017-12-01 15:09:11,476: Parsing etc/get_custom_schema.sql
+2017-12-01 15:09:11,485: Parsing materializations/archive.sql
+2017-12-01 15:09:11,516: Parsing materializations/bigquery.sql
+2017-12-01 15:09:11,532: Parsing materializations/helpers.sql
+2017-12-01 15:09:11,554: Parsing materializations/incremental.sql
+2017-12-01 15:09:11,584: Parsing materializations/table.sql
+2017-12-01 15:09:11,610: Parsing materializations/view.sql
+2017-12-01 15:09:11,627: Parsing materializations/wrapper.sql
+2017-12-01 15:09:11,633: Parsing schema_tests/accepted_values.sql
+2017-12-01 15:09:11,639: Parsing schema_tests/not_null.sql
+2017-12-01 15:09:11,643: Parsing schema_tests/relationships.sql
+2017-12-01 15:09:11,649: Parsing schema_tests/unique.sql
+2017-12-01 15:09:11,661: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 15:09:11,670: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 15:09:11,675: 
+2017-12-01 15:09:11,682: Acquiring new bigquery connection "master".
+2017-12-01 15:09:11,682: Opening a new connection (0 currently allocated)
+2017-12-01 15:09:14,035: 15:09:14 | Concurrency: 1 threads (target='dev-service-account')
+2017-12-01 15:09:14,036: 15:09:14 | 
+2017-12-01 15:09:14,286: 15:09:14 | 1 of 1 START view model agency_data_pipeline.dbt_test................ [RUN]
+2017-12-01 15:09:14,287: Compiling model.agency_data_pipeline.dbt_test
+2017-12-01 15:09:14,292: Writing injected SQL for node "model.agency_data_pipeline.dbt_test"
+2017-12-01 15:09:14,293: Acquiring new bigquery connection "dbt_test".
+2017-12-01 15:09:14,293: Opening a new connection (1 currently allocated)
+2017-12-01 15:09:14,758: Model SQL (dbt_test):
+-- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+-- 
+
+
+SELECT account, count(date) FROM ga_mcf group by account
+2017-12-01 15:09:14,873: Bad request while running:
+-- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+-- 
+
+
+SELECT account, count(date) FROM ga_mcf group by account
+2017-12-01 15:09:14,874: 400 POST https://www.googleapis.com/bigquery/v2/projects/agency-data-pipeline-185318/datasets/agency_data_pipeline/tables: Bad table reference "ga_mcf"; table references in standard SQL views require explicit project IDs.
+2017-12-01 15:09:14,874: Sending event: {'category': 'dbt', 'action': 'run_model', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1149c0ad0>], 'label': 'aedf530e-e64d-46b2-97da-55d3d47061db'}
+2017-12-01 15:09:15,184: 15:09:15 | 1 of 1 ERROR creating view model agency_data_pipeline.dbt_test....... [ERROR in 0.59s]
+2017-12-01 15:09:15,225: 15:09:15 | 
+2017-12-01 15:09:15,225: 15:09:15 | Finished running 1 view models in 1.19s.
+2017-12-01 15:09:15,225: Connection 'master' was left open.
+2017-12-01 15:09:15,225: 
+2017-12-01 15:09:15,226: Completed with 1 errors:
+2017-12-01 15:09:15,226: 
+2017-12-01 15:09:15,226: Database Error in model dbt_test (models/base/dbt_test.sql)
+2017-12-01 15:09:15,226:   Bad table reference "ga_mcf"; table references in standard SQL views require explicit project IDs.
+2017-12-01 15:09:15,226:   compiled SQL at target/compiled/agency_data_pipeline/base/dbt_test.sql
+2017-12-01 15:09:15,227: 
+Done. PASS=0 ERROR=1 SKIP=0 TOTAL=1
+2017-12-01 15:09:15,227: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114703510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x114703650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1148bfe90>], 'label': 'end'}
+2017-12-01 15:09:15,441: Flushing usage events
+2017-12-01 15:10:26,008: Tracking: tracking
+2017-12-01 15:10:26,033: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e68650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e68510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e685d0>], 'label': 'start'}
+2017-12-01 15:10:26,803: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 15:10:26,815: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 15:10:26,818: Parsing core.sql
+2017-12-01 15:10:26,833: Parsing adapters/bigquery.sql
+2017-12-01 15:10:26,840: Parsing adapters/common.sql
+2017-12-01 15:10:26,857: Parsing adapters/postgres.sql
+2017-12-01 15:10:26,863: Parsing adapters/redshift.sql
+2017-12-01 15:10:26,889: Parsing etc/get_custom_schema.sql
+2017-12-01 15:10:26,904: Parsing materializations/archive.sql
+2017-12-01 15:10:26,942: Parsing materializations/bigquery.sql
+2017-12-01 15:10:26,958: Parsing materializations/helpers.sql
+2017-12-01 15:10:26,981: Parsing materializations/incremental.sql
+2017-12-01 15:10:27,009: Parsing materializations/table.sql
+2017-12-01 15:10:27,029: Parsing materializations/view.sql
+2017-12-01 15:10:27,054: Parsing materializations/wrapper.sql
+2017-12-01 15:10:27,062: Parsing schema_tests/accepted_values.sql
+2017-12-01 15:10:27,070: Parsing schema_tests/not_null.sql
+2017-12-01 15:10:27,078: Parsing schema_tests/relationships.sql
+2017-12-01 15:10:27,085: Parsing schema_tests/unique.sql
+2017-12-01 15:10:27,094: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 15:10:27,098: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 15:10:27,101: 
+2017-12-01 15:10:27,104: Acquiring new bigquery connection "master".
+2017-12-01 15:10:27,104: Opening a new connection (0 currently allocated)
+2017-12-01 15:10:27,699: 15:10:27 | Concurrency: 1 threads (target='dev-service-account')
+2017-12-01 15:10:27,700: 15:10:27 | 
+2017-12-01 15:10:28,011: 15:10:28 | 1 of 1 START view model agency_data_pipeline.dbt_test................ [RUN]
+2017-12-01 15:10:28,011: Compiling model.agency_data_pipeline.dbt_test
+2017-12-01 15:10:28,020: Writing injected SQL for node "model.agency_data_pipeline.dbt_test"
+2017-12-01 15:10:28,021: Acquiring new bigquery connection "dbt_test".
+2017-12-01 15:10:28,022: Opening a new connection (1 currently allocated)
+2017-12-01 15:10:28,637: Model SQL (dbt_test):
+-- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+-- 
+
+
+SELECT account, count(date) FROM [agency-data-pipeline-185318:agency_data_pipeline.ga_mcf] group by account
+2017-12-01 15:10:28,891: Bad request while running:
+-- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+-- 
+
+
+SELECT account, count(date) FROM [agency-data-pipeline-185318:agency_data_pipeline.ga_mcf] group by account
+2017-12-01 15:10:28,892: 400 POST https://www.googleapis.com/bigquery/v2/projects/agency-data-pipeline-185318/datasets/agency_data_pipeline/tables: Syntax error: Unexpected "[" at [9:34]. If this is a table identifier, escape the name with `, e.g. `table.name` rather than [table.name].
+2017-12-01 15:10:28,892: Sending event: {'category': 'dbt', 'action': 'run_model', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108125ad0>], 'label': '0e867175-a944-4e91-a415-a108a2ba01ca'}
+2017-12-01 15:10:29,104: 15:10:29 | 1 of 1 ERROR creating view model agency_data_pipeline.dbt_test....... [ERROR in 0.88s]
+2017-12-01 15:10:29,151: 15:10:29 | 
+2017-12-01 15:10:29,151: 15:10:29 | Finished running 1 view models in 1.45s.
+2017-12-01 15:10:29,151: Connection 'master' was left open.
+2017-12-01 15:10:29,151: 
+2017-12-01 15:10:29,151: Completed with 1 errors:
+2017-12-01 15:10:29,151: 
+2017-12-01 15:10:29,152: Database Error in model dbt_test (models/base/dbt_test.sql)
+2017-12-01 15:10:29,152:   Syntax error: Unexpected "[" at [9:34]. If this is a table identifier, escape the name with `, e.g. `table.name` rather than [table.name].
+2017-12-01 15:10:29,152:   compiled SQL at target/compiled/agency_data_pipeline/base/dbt_test.sql
+2017-12-01 15:10:29,152: 
+Done. PASS=0 ERROR=1 SKIP=0 TOTAL=1
+2017-12-01 15:10:29,152: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e68510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107e68650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108024e90>], 'label': 'end'}
+2017-12-01 15:10:29,367: Flushing usage events
+2017-12-01 15:11:01,964: Tracking: tracking
+2017-12-01 15:11:01,972: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a18e650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a18e510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a18e5d0>], 'label': 'start'}
+2017-12-01 15:11:02,197: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 15:11:02,214: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 15:11:02,218: Parsing core.sql
+2017-12-01 15:11:02,232: Parsing adapters/bigquery.sql
+2017-12-01 15:11:02,242: Parsing adapters/common.sql
+2017-12-01 15:11:02,264: Parsing adapters/postgres.sql
+2017-12-01 15:11:02,269: Parsing adapters/redshift.sql
+2017-12-01 15:11:02,290: Parsing etc/get_custom_schema.sql
+2017-12-01 15:11:02,298: Parsing materializations/archive.sql
+2017-12-01 15:11:02,329: Parsing materializations/bigquery.sql
+2017-12-01 15:11:02,346: Parsing materializations/helpers.sql
+2017-12-01 15:11:02,369: Parsing materializations/incremental.sql
+2017-12-01 15:11:02,397: Parsing materializations/table.sql
+2017-12-01 15:11:02,418: Parsing materializations/view.sql
+2017-12-01 15:11:02,436: Parsing materializations/wrapper.sql
+2017-12-01 15:11:02,443: Parsing schema_tests/accepted_values.sql
+2017-12-01 15:11:02,454: Parsing schema_tests/not_null.sql
+2017-12-01 15:11:02,460: Parsing schema_tests/relationships.sql
+2017-12-01 15:11:02,467: Parsing schema_tests/unique.sql
+2017-12-01 15:11:02,476: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 15:11:02,480: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 15:11:02,483: 
+2017-12-01 15:11:02,486: Acquiring new bigquery connection "master".
+2017-12-01 15:11:02,486: Opening a new connection (0 currently allocated)
+2017-12-01 15:11:03,610: 15:11:03 | Concurrency: 1 threads (target='dev-service-account')
+2017-12-01 15:11:03,610: 15:11:03 | 
+2017-12-01 15:11:03,832: 15:11:03 | 1 of 1 START view model agency_data_pipeline.dbt_test................ [RUN]
+2017-12-01 15:11:03,833: Compiling model.agency_data_pipeline.dbt_test
+2017-12-01 15:11:03,842: Writing injected SQL for node "model.agency_data_pipeline.dbt_test"
+2017-12-01 15:11:03,843: Acquiring new bigquery connection "dbt_test".
+2017-12-01 15:11:03,843: Opening a new connection (1 currently allocated)
+2017-12-01 15:11:04,304: Model SQL (dbt_test):
+-- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+-- 
+
+
+SELECT account, count(date) FROM [agency-data-pipeline-185318:agency_data_pipeline.ga_mcf] group by account
+2017-12-01 15:11:04,456: Bad request while running:
+-- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+-- 
+
+
+SELECT account, count(date) FROM [agency-data-pipeline-185318:agency_data_pipeline.ga_mcf] group by account
+2017-12-01 15:11:04,456: 400 POST https://www.googleapis.com/bigquery/v2/projects/agency-data-pipeline-185318/datasets/agency_data_pipeline/tables: Syntax error: Unexpected "[" at [9:34]. If this is a table identifier, escape the name with `, e.g. `table.name` rather than [table.name].
+2017-12-01 15:11:04,457: Sending event: {'category': 'dbt', 'action': 'run_model', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a44bad0>], 'label': 'e51dbe03-7efe-4b85-8ec5-527bc8d81cdc'}
+2017-12-01 15:11:04,748: 15:11:04 | 1 of 1 ERROR creating view model agency_data_pipeline.dbt_test....... [ERROR in 0.62s]
+2017-12-01 15:11:04,765: 15:11:04 | 
+2017-12-01 15:11:04,766: 15:11:04 | Finished running 1 view models in 1.16s.
+2017-12-01 15:11:04,766: Connection 'master' was left open.
+2017-12-01 15:11:04,766: 
+2017-12-01 15:11:04,767: Completed with 1 errors:
+2017-12-01 15:11:04,767: 
+2017-12-01 15:11:04,767: Database Error in model dbt_test (models/base/dbt_test.sql)
+2017-12-01 15:11:04,768:   Syntax error: Unexpected "[" at [9:34]. If this is a table identifier, escape the name with `, e.g. `table.name` rather than [table.name].
+2017-12-01 15:11:04,768:   compiled SQL at target/compiled/agency_data_pipeline/base/dbt_test.sql
+2017-12-01 15:11:04,768: 
+Done. PASS=0 ERROR=1 SKIP=0 TOTAL=1
+2017-12-01 15:11:04,769: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a18e510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a18e650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a34a3d0>], 'label': 'end'}
+2017-12-01 15:11:05,060: Flushing usage events
+2017-12-01 15:11:27,352: Tracking: tracking
+2017-12-01 15:11:27,368: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11065b650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11065b510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11065b5d0>], 'label': 'start'}
+2017-12-01 15:11:28,133: Loading dependency project from /Library/Python/2.7/site-packages/dbt/include
+2017-12-01 15:11:28,151: Loading dependency project from /Users/davidkrevitt/Dropbox/CIFL/projects/directive/adp-directive/dbt_modules
+2017-12-01 15:11:28,155: Parsing core.sql
+2017-12-01 15:11:28,175: Parsing adapters/bigquery.sql
+2017-12-01 15:11:28,182: Parsing adapters/common.sql
+2017-12-01 15:11:28,199: Parsing adapters/postgres.sql
+2017-12-01 15:11:28,207: Parsing adapters/redshift.sql
+2017-12-01 15:11:28,232: Parsing etc/get_custom_schema.sql
+2017-12-01 15:11:28,240: Parsing materializations/archive.sql
+2017-12-01 15:11:28,283: Parsing materializations/bigquery.sql
+2017-12-01 15:11:28,301: Parsing materializations/helpers.sql
+2017-12-01 15:11:28,319: Parsing materializations/incremental.sql
+2017-12-01 15:11:28,350: Parsing materializations/table.sql
+2017-12-01 15:11:28,376: Parsing materializations/view.sql
+2017-12-01 15:11:28,403: Parsing materializations/wrapper.sql
+2017-12-01 15:11:28,409: Parsing schema_tests/accepted_values.sql
+2017-12-01 15:11:28,415: Parsing schema_tests/not_null.sql
+2017-12-01 15:11:28,419: Parsing schema_tests/relationships.sql
+2017-12-01 15:11:28,425: Parsing schema_tests/unique.sql
+2017-12-01 15:11:28,433: Parsing model.agency_data_pipeline.dbt_test
+2017-12-01 15:11:28,437: Found 40 macros, 0 analyses, 0 archives, 0 tests, 1 models, 0 operations
+2017-12-01 15:11:28,440: 
+2017-12-01 15:11:28,443: Acquiring new bigquery connection "master".
+2017-12-01 15:11:28,443: Opening a new connection (0 currently allocated)
+2017-12-01 15:11:29,951: 15:11:29 | Concurrency: 1 threads (target='dev-service-account')
+2017-12-01 15:11:29,951: 15:11:29 | 
+2017-12-01 15:11:30,165: 15:11:30 | 1 of 1 START view model agency_data_pipeline.dbt_test................ [RUN]
+2017-12-01 15:11:30,165: Compiling model.agency_data_pipeline.dbt_test
+2017-12-01 15:11:30,174: Writing injected SQL for node "model.agency_data_pipeline.dbt_test"
+2017-12-01 15:11:30,175: Acquiring new bigquery connection "dbt_test".
+2017-12-01 15:11:30,175: Opening a new connection (1 currently allocated)
+2017-12-01 15:11:30,602: Model SQL (dbt_test):
+-- Welcome to your first dbt model!
+-- Did you know that you can also configure models directly within
+-- the SQL file? This will override configurations stated in dbt_project.yml
+
+-- Try changing 'view' to 'table', then re-running dbt
+-- 
+
+
+SELECT account, count(date) FROM `agency-data-pipeline-185318:agency_data_pipeline.ga_mcf` group by account
+2017-12-01 15:11:30,839: Sending event: {'category': 'dbt', 'action': 'run_model', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11088d410>], 'label': '0c29c364-f82d-41ca-ba57-9d49dfb77f10'}
+2017-12-01 15:11:31,127: 15:11:31 | 1 of 1 OK created view model agency_data_pipeline.dbt_test........... [CREATE VIEW in 0.67s]
+2017-12-01 15:11:31,198: 15:11:31 | 
+2017-12-01 15:11:31,198: 15:11:31 | Finished running 1 view models in 1.25s.
+2017-12-01 15:11:31,199: Connection 'master' was left open.
+2017-12-01 15:11:31,199: 
+2017-12-01 15:11:31,199: Completed successfully
+2017-12-01 15:11:31,199: 
+Done. PASS=1 ERROR=0 SKIP=0 TOTAL=1
+2017-12-01 15:11:31,200: Sending event: {'category': 'dbt', 'action': 'invocation', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11065b510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11065b650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1107c5b90>], 'label': 'end'}
+2017-12-01 15:11:31,528: Flushing usage events

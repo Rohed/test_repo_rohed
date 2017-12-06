@@ -1,0 +1,26 @@
+SELECT  
+client,
+channel,
+platform,
+yyyymm,
+url,
+day_count,
+case when day_count_0 > 0.00 then (day_count - day_count_0)/day_count_0 else 0.00 end day_diff_pct,
+sessions,
+case when sessions_0 > 0.00 then (sessions - sessions_0)/sessions_0 else 0.00 end sessions_diff_pct,
+warm_goal_completions,
+case when warm_goal_completions_0 > 0.00 then (warm_goal_completions - warm_goal_completions_0)/warm_goal_completions_0 else 0.00 end warm_goal_completions_diff_pct,
+hot_goal_completions,
+case when hot_goal_completions_0 > 0.00 then (hot_goal_completions - hot_goal_completions_0)/hot_goal_completions_0 else 0.00 end hot_goal_completions_diff_pct,
+clicks,
+case when clicks_0 > 0.00 then (clicks - clicks_0)/clicks_0 else 0.00 end clicks_diff_pct,
+conversions,
+case when conversions_0 > 0.00 then (conversions - conversions_0)/conversions_0 else 0.00 end conversions_diff_pct,
+cost,
+case when cost_0 > 0.00 then (cost - cost_0)/cost_0 else 0.00 end cost_diff_pct,
+case when sessions > 0.00 then click_session_diff/sessions else 0.00 end click_session_diff_pct,
+days_p_pct,
+days_ga_pct,
+days_both_pct
+FROM `agency-data-pipeline-185318.DBT.agg_monthly_url_diff`
+order by client asc, channel asc, platform asc, url asc, yyyymm asc
