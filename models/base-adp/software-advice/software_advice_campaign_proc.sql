@@ -21,6 +21,8 @@ null as clicks,
 max(conversions) as conversions
 FROM `agency-data-pipeline-185318.agency_data_pipeline.software_advice_campaign` 
 where account in (select account from {{ref('accounts_proc')}} where platform = 'Software Advice')
+and company != cast(cost as string)
+and conversions = 1 
 group by date, account, channel, platform, company
   )
 group by date, account, channel, platform
