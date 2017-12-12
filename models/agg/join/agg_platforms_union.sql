@@ -42,12 +42,6 @@ FROM
 
 UNION ALL
 
-SELECT *
-FROM  
-  {{ref('software_advice_campaign_proc')}}  
-
-UNION ALL
-
 SELECT 
 date, 
 account, 
