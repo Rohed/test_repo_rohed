@@ -1,0 +1,22 @@
+# Put this file in ~/.dbt/profiles.yml
+#
+# This is an annotated sample project configuration for reference.
+# It attempts to show all possible configuration options.
+#
+directive:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: agency-data-pipeline-185318
+      schema: DBT
+      threads: 4
+      keyfile: /path/to/adp-directive.json
+    prod:
+      type: bigquery
+      method: service-account
+      project: agency-data-pipeline-185318
+      schema: agency_data_pipeline
+      threads: 4
+      keyfile: /path/to/adp-directive.json

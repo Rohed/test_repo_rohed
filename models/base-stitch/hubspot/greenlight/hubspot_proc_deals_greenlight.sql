@@ -6,7 +6,7 @@ cast(close_date as date) closedate,
 deal_stage dealstage,
 case when deal_source_secondary is not null then deal_source_secondary
   when deal_source_primary = 'Inbound Paid' then 'Adwords' else deal_source_primary end
-  as dealsource,
+  as leadsource,
 dealid id,
 revenue
 FROM

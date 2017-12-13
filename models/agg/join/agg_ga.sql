@@ -1,39 +1,19 @@
-SELECT *
-FROM 
-{{ref('ga_platform_directive')}}
-
-UNION ALL
-
-SELECT *
-FROM
-{{ref('ga_platform_esub')}}
-
-UNION ALL
-
-SELECT *
-FROM
-{{ref('ga_platform_greenlight')}}
-
-UNION ALL
-
-SELECT *
-FROM
-{{ref('ga_platform_timetrade')}}
-
-UNION ALL
-
-SELECT *
-FROM
-{{ref('ga_platform_freedom')}}
-
-UNION ALL
-
-SELECT *
-FROM
-{{ref('ga_platform_xactly')}}
-
-UNION ALL
-
-SELECT *
-FROM
-{{ref('ga_platform_clear')}}
+SELECT  
+date as date,
+account,
+a.client,
+a.source,
+a.medium,
+concat(a.source, ' / ', a.medium) source_medium,  
+case when platform is null then "All Other" else platform end as platform,
+case when channel is null then "All Other" else channel end as channel,
+url,
+users,
+sessions,
+warm_goal_completions,
+hot_goal_completions
+FROM {{ref('ga_proc_all')}} a
+LEFT JOIN {{ref('mappings_ga_proc')}} b
+ON ( a.source = b.source
+  AND a.medium = b.medium 
+  and a.client = b.client )
