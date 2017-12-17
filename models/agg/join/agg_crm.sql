@@ -24,7 +24,7 @@ name dealname,
 revenue,
 isclosed,
 iswon, 
-null as dealstage
+stagename as dealstage
 FROM
 {{ref('sf_client_directive')}}
 
@@ -40,7 +40,7 @@ name dealname,
 revenue,
 isclosed,
 iswon, 
-null as dealstage
+stagename as dealstage
 FROM
 {{ref('sf_client_clear')}}
 

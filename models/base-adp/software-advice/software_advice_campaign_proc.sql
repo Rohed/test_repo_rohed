@@ -11,8 +11,9 @@ sum(conversions) as conversions
 from 
   ( 
 SELECT  
-date, 
+max(date) date, 
 account,
+company,
 'Paid' as channel,
 'Software Advice' as platform,
 max(cost) as cost, 
@@ -23,7 +24,8 @@ FROM `agency-data-pipeline-185318.agency_data_pipeline.software_advice_campaign`
 where account in (select account from {{ref('accounts_proc')}} where platform = 'Software Advice')
 and company != cast(cost as string)
 and conversions = 1 
-group by date, account, channel, platform, company
+group by account, company, channel, platform, company
   )
 group by date, account, channel, platform
 order by account asc, date asc
+

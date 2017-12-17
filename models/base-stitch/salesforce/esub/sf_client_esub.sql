@@ -5,7 +5,7 @@ SELECT
   a.leadsource leadsource,
   a.id id,
   a.name,
-  a.closedate createddate,  
+  a.createddate createddate,  
   a.closedate closedate,
   a.stagename stagename,
   coalesce(a.revenue,0) revenue,
