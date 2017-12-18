@@ -2,7 +2,7 @@ select *
 from  ( 
 
 SELECT  
-'No-Login Traffic' as account,
+'xactlycorp.com - master view' as account,
 'XactlyCorp' as client,
 lower(trim(regexp_replace(replace(replace(replace(replace(CONCAT(hostname,landingpagepath),'www.',''),'http://',''),'https://',''),'.html',''),r'\?.*$',''),'/')) as url,
 cast(date as date) date,
@@ -14,7 +14,7 @@ users,
 sessions,
 _sdc_sequence _sdc_sequence,
 first_value(_sdc_sequence) OVER (PARTITION BY landingpagepath, source, medium, date ORDER BY _sdc_sequence DESC) lv
-FROM `agency-data-pipeline-185318.ga_xactly.report` 
+FROM `agency-data-pipeline-185318.ga_xactlycorp.report` 
 ) 
 
 WHERE lv = _sdc_sequence

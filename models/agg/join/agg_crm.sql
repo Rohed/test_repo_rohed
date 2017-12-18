@@ -8,7 +8,7 @@ name dealname,
 revenue,
 isclosed,
 iswon,
-null as dealstage
+stagename as dealstage
 FROM 
 {{ref('sf_client_esub')}}
 

@@ -45,7 +45,7 @@ null as deals,
 null as revenue,
 null as xero_revenue
 FROM
-{{ref('marketo_stats_esub')}}
+{{ref('marketo_stats_all')}}
 
 
 UNION ALL

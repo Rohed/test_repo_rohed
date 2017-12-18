@@ -129,3 +129,9 @@ UNION ALL
 SELECT *
 FROM
 {{ref('ga_proc_tydenbrooks')}}
+
+UNION ALL
+
+SELECT *
+FROM
+{{ref('ga_proc_xactly')}}
